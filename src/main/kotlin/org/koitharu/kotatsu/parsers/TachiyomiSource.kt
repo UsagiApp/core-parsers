@@ -29,7 +29,7 @@ import org.koitharu.kotatsu.parsers.model.ContentType
  */
 @Target(AnnotationTarget.CLASS)
 @Retention(AnnotationRetention.SOURCE)
-internal annotation class TachiyomiSource(
+public annotation class TachiyomiSource(
     /**
      * Name of manga source. Used as an Enum value, must be UPPER_CASE and unique.
      * If empty, will be auto-generated from class name.
