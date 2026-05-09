@@ -2,7 +2,15 @@ package org.koitharu.kotatsu.parsers
 
 public interface MangaParserAuthProvider {
 
-	public val isAuthorized: Boolean
+	/**
+	 * URL for authentication web page, if applicable.
+	 * May be null if auth is handled differently.
+	 */
+	public val authUrl: String
 
-	public suspend fun getUsername(): String?
+	/**
+	 * Check if user is authorized.
+	 * Backward-compatible suspend function version.
+	 */
+	public suspend fun isAuthorized(): Boolean
 }
