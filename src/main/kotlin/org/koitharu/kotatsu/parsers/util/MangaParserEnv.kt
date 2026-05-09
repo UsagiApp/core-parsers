@@ -17,7 +17,6 @@ import org.koitharu.kotatsu.parsers.model.*
  * @see [MangaChapter.id]
  * @see [MangaPage.id]
  */
-@InternalParsersApi
 public fun generateUid(source: MangaSource, url: String): Long {
 	var h = LONG_HASH_SEED
 	source.name.forEach { c ->
@@ -37,7 +36,6 @@ public fun generateUid(source: MangaSource, url: String): Long {
  * @see [MangaChapter.id]
  * @see [MangaPage.id]
  */
-@InternalParsersApi
 public fun generateUid(source: MangaSource, id: Long): Long {
 	var h = LONG_HASH_SEED
 	source.name.forEach { c ->
@@ -83,7 +81,6 @@ private fun <T> Set<T>?.oneOrThrowIfMany(msg: String): T? = when {
 	else -> throw IllegalArgumentException(msg)
 }
 
-@InternalParsersApi
 public fun urlBuilder(domain: String, subdomain: String? = null): HttpUrl.Builder {
 	return HttpUrl.Builder()
 		.scheme(SCHEME_HTTPS)
