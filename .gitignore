@@ -100,5 +100,4 @@ src/test/resources/cookies.txt
 .vscode/
 
 # Config file
-*.properties
 /local.properties
