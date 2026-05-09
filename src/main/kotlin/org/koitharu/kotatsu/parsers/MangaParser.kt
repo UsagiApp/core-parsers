@@ -83,7 +83,12 @@ public interface MangaParser : Interceptor {
 	 * Return [Manga] object by web link to it
 	 * @see [Manga.publicUrl]
 	 */
-	public suspend fun resolveLink(link: HttpUrl): Manga?
+	public suspend fun resolveLink(link: HttpUrl): Manga? {
+		return resolveLink(org.koitharu.kotatsu.parsers.util.LinkResolver(link, parser = this), link)
+	}
+
+	@Deprecated("Use resolveLink(HttpUrl) instead")
+	public suspend fun resolveLink(resolver: org.koitharu.kotatsu.parsers.util.LinkResolver, link: HttpUrl): Manga? = null
 
 	/**
 	 * Backward-compatible overload for resolveLink with String

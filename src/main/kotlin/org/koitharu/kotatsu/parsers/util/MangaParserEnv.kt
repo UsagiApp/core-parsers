@@ -86,3 +86,12 @@ public fun urlBuilder(domain: String, subdomain: String? = null): HttpUrl.Builde
 		.scheme(SCHEME_HTTPS)
 		.host(if (subdomain == null) domain else "$subdomain.$domain")
 }
+
+public fun MangaParser.generateUid(url: String): Long =
+	org.koitharu.kotatsu.parsers.util.generateUid(source, url)
+
+public fun MangaParser.generateUid(id: Long): Long =
+	org.koitharu.kotatsu.parsers.util.generateUid(source, id)
+
+public fun MangaParser.urlBuilder(subdomain: String? = null): HttpUrl.Builder =
+	org.koitharu.kotatsu.parsers.util.urlBuilder(domain, subdomain)
