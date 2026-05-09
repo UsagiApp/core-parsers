@@ -89,6 +89,3 @@ public fun urlBuilder(domain: String, subdomain: String? = null): HttpUrl.Builde
 		.scheme(SCHEME_HTTPS)
 		.host(if (subdomain == null) domain else "$subdomain.$domain")
 }
-
-private const val LONG_HASH_SEED = 31L
-private const val SCHEME_HTTPS = "https"

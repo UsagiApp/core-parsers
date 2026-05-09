@@ -83,5 +83,5 @@ public interface MangaParser : Interceptor {
 	 * @see [Manga.publicUrl]
 	 */
 	@InternalParsersApi
-	public suspend fun resolveLink(resolver: LinkResolver, link: HttpUrl): Manga?
+	public suspend fun resolveLink(link: HttpUrl): Manga?
 }

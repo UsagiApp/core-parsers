@@ -16,6 +16,6 @@ public class LinkResolver internal constructor(
 	public suspend fun getSource(): MangaSource? = parser.source
 
 	public suspend fun getManga(): Manga? {
-		return parser.resolveLink(this, link)
+		return parser.resolveLink(link)
 	}
 }
