@@ -14,7 +14,7 @@ public data class MangaSearchQueryCapabilities internal constructor(
 
 	public constructor(vararg capabilities: SearchCapability) : this(ArraySet(capabilities))
 
-	internal fun validate(query: MangaSearchQuery) {
+	public fun validate(query: MangaSearchQuery) {
 		val strictFields = capabilities.filter { it.isExclusive }.mapToSet { it.field }
 		val usedStrictFields = query.criteria.mapToSet { it.field }.intersect(strictFields)
 

@@ -227,7 +227,7 @@ public fun String.almostEquals(other: String, threshold: Float): Boolean {
 
 public fun String.isNumeric(): Boolean = all { c -> c.isDigit() }
 
-internal fun StringBuilder.removeTrailingZero() {
+public fun StringBuilder.removeTrailingZero() {
 	if (length > 2 && get(length - 1) == '0') {
 		val dot = get(length - 2)
 		if (dot == ',' || dot == '.') {
