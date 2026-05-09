@@ -82,6 +82,10 @@ public interface MangaParser : Interceptor {
 	 * Return [Manga] object by web link to it
 	 * @see [Manga.publicUrl]
 	 */
-	@InternalParsersApi
 	public suspend fun resolveLink(link: HttpUrl): Manga?
+
+	/**
+	 * Backward-compatible overload for resolveLink with String
+	 */
+	public suspend fun resolveLink(link: String): Manga? = resolveLink(HttpUrl.parse(link)!!)
 }
