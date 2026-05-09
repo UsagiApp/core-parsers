@@ -99,7 +99,7 @@ internal fun MangaSearchQueryCapabilities.toMangaListFilterCapabilities() = Mang
 	isAuthorSearchSupported = capabilities.any { x -> x.field == AUTHOR },
 )
 
-internal fun MangaListFilterCapabilities.toMangaSearchQueryCapabilities(): MangaSearchQueryCapabilities =
+public fun MangaListFilterCapabilities.toMangaSearchQueryCapabilities(): MangaSearchQueryCapabilities =
 	MangaSearchQueryCapabilities(
 		capabilities = setOfNotNull(
 			isMultipleTagsSupported.takeIf { it }?.let {

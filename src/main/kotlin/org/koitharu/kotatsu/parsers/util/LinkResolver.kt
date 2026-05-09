@@ -8,7 +8,7 @@ import org.koitharu.kotatsu.parsers.MangaParser
 import org.koitharu.kotatsu.parsers.model.Manga
 import org.koitharu.kotatsu.parsers.model.MangaSource
 
-public class LinkResolver internal constructor(
+public class LinkResolver(
 	private val parser: MangaParser,
 	public val link: HttpUrl,
 ) {

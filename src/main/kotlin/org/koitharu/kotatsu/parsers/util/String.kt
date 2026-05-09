@@ -13,7 +13,7 @@ import kotlin.contracts.contract
 import kotlin.math.min
 
 private val REGEX_WHITESPACE = Regex("\\s+")
-internal const val LONG_HASH_SEED = 1125899906842597L
+public const val LONG_HASH_SEED = 1125899906842597L
 
 public fun String.removeSurrounding(vararg chars: Char): String {
 	if (isEmpty()) {
