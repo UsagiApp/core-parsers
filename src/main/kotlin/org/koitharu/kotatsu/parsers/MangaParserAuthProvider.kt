@@ -13,4 +13,10 @@ public interface MangaParserAuthProvider {
 	 * Backward-compatible suspend function version.
 	 */
 	public suspend fun isAuthorized(): Boolean
+
+	/**
+	 * Get username of authorized user.
+	 * Backward-compatible for parsers that implemented this.
+	 */
+	public suspend fun getUsername(): String? = null
 }
