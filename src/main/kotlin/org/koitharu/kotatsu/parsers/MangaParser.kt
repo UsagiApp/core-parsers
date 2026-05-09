@@ -4,6 +4,7 @@ package org.koitharu.kotatsu.parsers
 
 import okhttp3.Headers
 import okhttp3.HttpUrl
+import okhttp3.HttpUrl.Companion.toHttpUrlOrNull
 import okhttp3.Interceptor
 import org.koitharu.kotatsu.parsers.config.ConfigKey
 import org.koitharu.kotatsu.parsers.config.MangaSourceConfig
@@ -87,5 +88,5 @@ public interface MangaParser : Interceptor {
 	/**
 	 * Backward-compatible overload for resolveLink with String
 	 */
-	public suspend fun resolveLink(link: String): Manga? = resolveLink(HttpUrl.parse(link)!!)
+	public suspend fun resolveLink(link: String): Manga? = resolveLink(link.toHttpUrlOrNull() ?: return null)
 }
