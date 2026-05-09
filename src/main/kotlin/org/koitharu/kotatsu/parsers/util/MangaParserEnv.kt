@@ -5,6 +5,7 @@ import org.jsoup.nodes.Element
 import org.koitharu.kotatsu.parsers.ErrorMessages
 import org.koitharu.kotatsu.parsers.InternalParsersApi
 import org.koitharu.kotatsu.parsers.MangaParser
+import org.koitharu.kotatsu.parsers.core.AbstractMangaParser
 import org.koitharu.kotatsu.parsers.exception.ParseException
 import org.koitharu.kotatsu.parsers.model.*
 
@@ -93,5 +94,11 @@ public fun MangaParser.generateUid(url: String): Long =
 public fun MangaParser.generateUid(id: Long): Long =
 	org.koitharu.kotatsu.parsers.util.generateUid(source, id)
 
+
 public fun MangaParser.urlBuilder(subdomain: String? = null): HttpUrl.Builder =
 	org.koitharu.kotatsu.parsers.util.urlBuilder(domain, subdomain)
+
+@InternalParsersApi
+public fun getDomain(parser: MangaParser, subdomain: String): String {
+	return subdomain + "." + parser.domain.removePrefix("www.")
+}
