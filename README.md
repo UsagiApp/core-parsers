@@ -23,11 +23,11 @@ A library for plugin / extension creators. This core library containing base mod
  	}
  	```
 
-4. Usage in code
+## Usage in code
 
    This library provides the core for creating sources. See our [template project](https://github.com/UsagiApp/plugins) for example implementations.
 
-### License
+## License
 
 [![GNU GPLv3 Image](https://www.gnu.org/graphics/gplv3-127x51.png)](http://www.gnu.org/licenses/gpl-3.0.en.html)
 
