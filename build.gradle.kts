@@ -8,6 +8,10 @@ plugins {
 group = "org.draken"
 version = "0.0.1"
 
+kotlin {
+    jvmToolchain(11)
+}
+
 tasks.jar {
     exclude("android/**")
     exclude("androidx/annotation/**")
@@ -24,10 +28,6 @@ tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach 
             "-opt-in=org.koitharu.kotatsu.parsers.InternalParsersApi",
         )
     }
-}
-
-kotlin {
-    jvmToolchain(11)
 }
 
 publishing {
