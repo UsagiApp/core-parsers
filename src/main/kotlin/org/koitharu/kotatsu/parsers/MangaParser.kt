@@ -88,5 +88,8 @@ public interface MangaParser : Interceptor {
 	/**
 	 * Backward-compatible overload for resolveLink with String
 	 */
-	public suspend fun resolveLink(link: String): Manga? = resolveLink(link.toHttpUrlOrNull() ?: return null)
+	public suspend fun resolveLink(link: String): Manga? {
+		val url = link.toHttpUrlOrNull() ?: return null
+		return resolveLink(url)
+	}
 }
