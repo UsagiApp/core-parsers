@@ -35,8 +35,13 @@ public abstract class HttpSource : CatalogueSource {
 
     public val headers: Headers by lazy { headersBuilder().build() }
 
+    private var _client: OkHttpClient? = null
     public open val client: OkHttpClient
-        get() = network.client
+        get() = _client ?: network.client
+
+    public fun setClient(client: OkHttpClient) {
+        _client = client
+    }
 
     protected open fun headersBuilder(): Headers.Builder = Headers.Builder()
         .add("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36")
