@@ -18,7 +18,7 @@ public class LinkResolver(
 
 	public suspend fun getManga(): Manga? {
 		val p = parser ?: return null // TODO: implement global link resolution via context
-		return p.resolveLink(this, link) ?: resolveManga(p)
+		return p.resolveLink(link) ?: resolveManga(p)
 	}
 
 	public suspend fun resolveManga(

@@ -92,7 +92,8 @@ public abstract class FlexibleMangaParser @InternalParsersApi constructor(
 	 * Return [Manga] object by web link to it
 	 * @see [Manga.publicUrl]
 	 */
-	override suspend fun resolveLink(resolver: LinkResolver, link: HttpUrl): Manga? = null
+	@Deprecated("Use resolveLink(HttpUrl) instead")
+    override suspend fun resolveLink(resolver: LinkResolver, link: HttpUrl): Manga? = null
 
 	override fun intercept(chain: Interceptor.Chain): Response = chain.proceed(chain.request())
 }

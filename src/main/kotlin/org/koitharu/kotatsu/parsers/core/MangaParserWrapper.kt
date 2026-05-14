@@ -58,7 +58,8 @@ public class MangaParserWrapper(
 
 	override suspend fun resolveLink(link: HttpUrl): Manga? = delegate.resolveLink(link)
 
-	override suspend fun resolveLink(resolver: LinkResolver, link: HttpUrl): Manga? = delegate.resolveLink(resolver, link)
+	@Deprecated("Use resolveLink(HttpUrl) instead")
+    override suspend fun resolveLink(resolver: LinkResolver, link: HttpUrl): Manga? = delegate.resolveLink(resolver, link)
 
 	override fun intercept(chain: Interceptor.Chain): Response = delegate.intercept(chain)
 

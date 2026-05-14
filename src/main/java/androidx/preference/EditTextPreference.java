@@ -5,4 +5,5 @@ public class EditTextPreference extends Preference {
         super(context);
     }
     public void setDialogTitle(CharSequence dialogTitle) {}
+    public CharSequence getDialogTitle() { return null; }
 }
