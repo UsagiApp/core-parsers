@@ -1,4 +1,4 @@
-@file:Suppress("DEPRECATION")
+@file:Suppress("DEPRECATION", "unused", "warnings")
 
 package org.koitharu.kotatsu.parsers.core
 

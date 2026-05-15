@@ -1,9 +1,11 @@
+@file:Suppress("DEPRECATION", "unused", "warnings")
+
 package org.koitharu.kotatsu.parsers.model
 
 import java.util.*
 
 public data class MangaListFilter(
-	@JvmField val query: String? = "",
+	@JvmField val query: String? = null,
 	@JvmField val tags: Set<MangaTag> = emptySet(),
 	@JvmField val tagsExclude: Set<MangaTag> = emptySet(),
 	@JvmField val locale: Locale? = null,
@@ -15,7 +17,7 @@ public data class MangaListFilter(
 	@JvmField val year: Int = YEAR_UNKNOWN,
 	@JvmField val yearFrom: Int = YEAR_UNKNOWN,
 	@JvmField val yearTo: Int = YEAR_UNKNOWN,
-	@JvmField val author: String? = "",
+	@JvmField val author: String? = null,
 ) {
 
 	private fun isNonSearchOptionsEmpty(): Boolean = tags.isEmpty() &&
@@ -84,7 +86,7 @@ public data class MangaListFilter(
 
 		fun build(): MangaListFilter = MangaListFilter(
 			query, tags, tagsExclude, locale, originalLocale, states,
-			contentRating, types, demographics, year, yearFrom, yearTo, author
+			contentRating, types, demographics, year, yearFrom, yearTo
 		)
 	}
 }
