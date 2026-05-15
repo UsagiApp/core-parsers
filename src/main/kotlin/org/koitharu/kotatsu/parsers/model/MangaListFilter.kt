@@ -3,7 +3,7 @@ package org.koitharu.kotatsu.parsers.model
 import java.util.*
 
 public data class MangaListFilter(
-	@JvmField val query: String = "",
+	@JvmField val query: String? = "",
 	@JvmField val tags: Set<MangaTag> = emptySet(),
 	@JvmField val tagsExclude: Set<MangaTag> = emptySet(),
 	@JvmField val locale: Locale? = null,
@@ -15,7 +15,7 @@ public data class MangaListFilter(
 	@JvmField val year: Int = YEAR_UNKNOWN,
 	@JvmField val yearFrom: Int = YEAR_UNKNOWN,
 	@JvmField val yearTo: Int = YEAR_UNKNOWN,
-	@JvmField val author: String = "",
+	@JvmField val author: String? = "",
 ) {
 
 	private fun isNonSearchOptionsEmpty(): Boolean = tags.isEmpty() &&
@@ -29,9 +29,9 @@ public data class MangaListFilter(
 		yearTo == YEAR_UNKNOWN &&
 		types.isEmpty() &&
 		demographics.isEmpty() &&
-		author.isEmpty()
+		author.isNullOrEmpty()
 
-	public fun isEmpty(): Boolean = isNonSearchOptionsEmpty() && query.isEmpty()
+	public fun isEmpty(): Boolean = isNonSearchOptionsEmpty() && query.isNullOrEmpty()
 
 	public fun isNotEmpty(): Boolean = !isEmpty()
 
@@ -44,7 +44,7 @@ public data class MangaListFilter(
 	}
 
 	internal class Builder {
-		private var query: String = ""
+		private var query: String? = ""
 		private val tags: MutableSet<MangaTag> = mutableSetOf()
 		private val tagsExclude: MutableSet<MangaTag> = mutableSetOf()
 		private var locale: Locale? = null
@@ -56,7 +56,7 @@ public data class MangaListFilter(
 		private var year: Int = YEAR_UNKNOWN
 		private var yearFrom: Int = YEAR_UNKNOWN
 		private var yearTo: Int = YEAR_UNKNOWN
-		private var author: String = ""
+		private var author: String? = ""
 
 		fun query(query: String?): Builder = apply { this.query = query ?: "" }
 		fun author(author: String?): Builder = apply { this.author = author ?: "" }
