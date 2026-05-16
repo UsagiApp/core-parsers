@@ -6,7 +6,7 @@ plugins {
 }
 
 group = "org.draken"
-version = "0.0.1"
+version = "0.0.3"
 
 kotlin {
     jvmToolchain(11)
@@ -15,7 +15,7 @@ kotlin {
 tasks.jar {
     exclude("android/**")
     exclude("androidx/annotation/**")
-    exclude("androidx/preference/**")
+//    exclude("androidx/preference/**")
 }
 
 tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
