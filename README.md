@@ -1,3 +1,6 @@
+> [!IMPORTANT]
+> DEPRECATED: We migrated this library and [core-exts](https://github.com/UsagiApp/core-exts) to [Tsuki](https://github.com/UsagiApp/Tsuki) library!
+
 # core-parsers
 
 A library for plugin / extension creators. This core library containing base models, utilities, exceptions, and Tachiyomi compatibility layer.
